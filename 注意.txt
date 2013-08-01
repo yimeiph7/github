@@ -1,0 +1,12 @@
+1、 dialog.setCanceledOnTouchOutside(false); //可以防止点击外边导致dialog消失
+2、 在主线程中如果有dialog没有dismisss，另起的线程如task等在finish() 时需要先将dialog dismiss掉才能finish,否则会报错
+3、 报错INSTALL_FAILED_INSUFFICIENT_STORAGE	原因是手机内存不足，导致不能安装
+4、 用LinearLayout进行布局时，要注意oratation那个东西，横竖要搞清
+5、 setNegativeButton("取消", new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						dialog.dismiss();//记得dismiss掉，否则有可能会出问题
+					}
+				})
+				
+				http://www.importnew.com/4868.html 源码网站
